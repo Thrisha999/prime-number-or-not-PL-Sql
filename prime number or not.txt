@@ -1,0 +1,33 @@
+--To check whether entered number is prime or not
+
+
+--PL/SQL BLOCK:
+declare
+	i int;
+	n int;
+	s int:=0;
+begin
+	n:=&n;
+	for i in 2..n/2
+	loop
+	   if mod(n,i)=0 then
+		s:=1;
+		end if;
+	end loop;
+	if(n=0 or n=1) then
+	  dbms_output.put_line(n||'is neither prime nor composite');
+	else if(s=1) then
+	  dbms_output.put_line(n||'is not a prime');
+	else
+	  dbms_output.put_line(n||'is a prime');
+    end if;
+    end if;
+end;
+/
+--output:
+Enter value for n: 2
+old   6:        n:=&n;
+new   6:        n:=2;
+2is a prime
+
+PL/SQL procedure successfully completed.
